@@ -33,7 +33,7 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="why-choose-list" style={{ display: 'flex', flexDirection: 'column', gap: 100 }}>
-          {reasons.map((r, i) => (
+          {reasons.map((r) => (
             <motion.div
               key={r.num}
               initial={{ opacity: 0, x: r.imgRight ? 100 : -100 }}
