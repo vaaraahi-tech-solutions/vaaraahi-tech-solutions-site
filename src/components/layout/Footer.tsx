@@ -2,8 +2,8 @@
 import { Mail, Phone, MapPin, Share2, Globe, GitBranch } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const navLinks = ['Home', 'Services', 'About Us', 'Team', 'Blog', 'Contact'];
-const services = ['Software Development', 'Solar Energy', 'Cloud Solutions', 'Cybersecurity', 'Financial Consulting'];
+const navLinks = ['Home', 'Services', 'About Us', 'Contact'];
+const services = ['Software Services', 'Solar Energy', 'Finance & Safety'];
 
 const Footer = () => (
   <footer style={{
@@ -58,12 +58,11 @@ const Footer = () => (
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontWeight: 900, color: 'white', fontSize: 16, flexShrink: 0
             }}>V</div>
-            <span style={{ fontSize: 22, fontWeight: 900, color: '#60a5fa', letterSpacing: 1 }}>VAARAAHI</span>
+            <span style={{ fontSize: 22, fontWeight: 900, color: '#60a5fa', letterSpacing: 1 }}>VAARAAHI TECH SOLUTIONS</span>
           </div>
 
           <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, fontSize: 14, marginBottom: 28, maxWidth: 280 }}>
-            Premium software engineering, solar energy solutions, and financial services.
-            Building a smarter, greener future — one innovation at a time.
+            Easy Software and Solar Solutions to Grow Your Business.
           </p>
 
           {/* Social icons */}

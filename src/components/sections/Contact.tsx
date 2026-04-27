@@ -27,24 +27,16 @@ const Contact = () => {
             style={{ flex: 1, paddingRight: 80 }}
           >
             <div className="section-tag">GET IN TOUCH</div>
-            <h3 className="section-title" style={{ color: 'white' }}>Let's Build Something <br/><span className="text-gold">Amazing</span></h3>
+            <h3 className="section-title" style={{ color: 'white' }}>Let's talk about your <br/><span className="text-gold">project</span></h3>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 18, marginTop: 12 }}>It's free and takes just 5 minutes</p>
             
-            <div style={{ marginTop: 40 }}>
-              {[
-                { icon: Phone, label: 'Phone', value: '+91 98765 43210' },
-                { icon: Mail, label: 'Email', value: 'vaaraahitechsolutions.team@gmail.com' },
-                { icon: MapPin, label: 'Office', value: 'Hyderabad, Telangana, India' },
-              ].map((item) => (
-                <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 32 }}>
-                  <div className="icon-box-gold" style={{ margin: 0, width: 48, height: 48, borderRadius: '50%' }}>
-                    <item.icon size={20} />
-                  </div>
-                  <div>
-                    <div className="text-gray" style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13, fontWeight: 700, textTransform: 'uppercase', marginBottom: 4 }}>{item.label}</div>
-                    <div className="text-white" style={{ color: 'white', fontSize: 16, fontWeight: 700 }}>{item.value}</div>
-                  </div>
-                </div>
-              ))}
+            <div style={{ marginTop: 40, display: 'flex', flexDirection: 'column', gap: 16 }}>
+              <a href="https://wa.me/919876543210" className="btn-gold" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, padding: '16px' }}>
+                WhatsApp Us
+              </a>
+              <a href="tel:+919876543210" className="btn-white-outline" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, padding: '16px' }}>
+                Call Us Now
+              </a>
             </div>
           </motion.div>
 

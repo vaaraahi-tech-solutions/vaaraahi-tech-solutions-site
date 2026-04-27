@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Target, Lightbulb, Users, Award, ArrowRight } from 'lucide-react';
 
 const values = [
-  { icon: Target, title: 'Mission-Driven' },
-  { icon: Lightbulb, title: 'Innovation First' },
-  { icon: Users, title: 'Client-Centric' },
-  { icon: Award, title: 'Quality Assured' },
+  { icon: Target, title: 'Simple' },
+  { icon: Lightbulb, title: 'Fast' },
+  { icon: Users, title: 'Expert' },
+  { icon: Award, title: 'Quality' },
 ];
 
 const About = () => {
@@ -23,17 +23,11 @@ const About = () => {
         >
           <div className="section-tag">WHO WE ARE</div>
           <h2 style={{ fontSize: 48, fontWeight: 800, color: 'white', marginBottom: 24, lineHeight: 1.1 }}>
-            Built on Innovation,<br/>
-            <span className="text-gold">Driven by Purpose</span>
+            Simple Tech for <br/>
+            <span className="text-gold">Your Business</span>
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 18, lineHeight: 1.7, maxWidth: 500, marginBottom: 24 }}>
-            Vaaraahi Tech Solutions is a forward-thinking technology company
-            specializing in software development and solar energy integration.
-            We believe the best technology is both powerful and sustainable.
-          </p>
-          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 18, lineHeight: 1.7, maxWidth: 500, marginBottom: 40 }}>
-            Founded with the vision of bridging digital transformation and green
-            energy, we serve businesses of all sizes across diverse industries.
+            We are a technology company based in India. We help small and medium businesses grow with modern software and save money using solar energy. Our team makes technology simple and affordable for everyone.
           </p>
           
           <a href="#" className="text-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontWeight: 700 }}>
@@ -46,16 +40,23 @@ const About = () => {
             {values.map((v, i) => (
               <motion.div
                 key={v.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.15, duration: 0.5 }}
+                initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                whileHover={{ y: -10, boxShadow: 'var(--shadow-hover)', borderColor: 'var(--accent)' }}
+                transition={{ delay: i * 0.1, duration: 0.6, type: 'spring', stiffness: 100 }}
                 viewport={{ once: true }}
                 className="premium-card"
+                style={{ cursor: 'default' }}
               >
-                <div className="icon-box-gold" style={{ marginBottom: 20 }}>
+                <motion.div 
+                  initial={{ rotate: -10 }}
+                  whileHover={{ rotate: 0, scale: 1.1 }}
+                  className="icon-box-gold" 
+                  style={{ marginBottom: 20 }}
+                >
                   <v.icon size={28} />
-                </div>
-                <h4 className="text-navy" style={{ fontSize: 18, fontWeight: 800 }}>{v.title}</h4>
+                </motion.div>
+                <h3 className="text-navy" style={{ fontSize: 20, fontWeight: 800 }}>{v.title}</h3>
               </motion.div>
             ))}
           </div>

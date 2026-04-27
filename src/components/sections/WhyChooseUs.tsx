@@ -4,20 +4,20 @@ import { motion } from 'framer-motion';
 const reasons = [
   {
     num: '01',
-    title: '10+ Years Experience',
-    desc: 'Our veteran engineers have seen it all. We bring a decade of deep technical expertise to ensure your systems are robust, scalable, and beautifully designed.',
+    title: 'Expert Team',
+    desc: 'We have over 10 years of experience fixing tech and energy problems.',
     imgRight: false
   },
   {
     num: '02',
-    title: 'End-to-End Solutions',
-    desc: 'From initial ideation and UI/UX design to backend development and cloud deployment, we cover the entire lifecycle of your digital product.',
+    title: 'Full Support',
+    desc: 'Our team handles everything for you from start to finish.',
     imgRight: true
   },
   {
     num: '03',
-    title: '24/7 Dedicated Support',
-    desc: 'Technology never sleeps, and neither do we. Our dedicated maintenance teams ensure your infrastructure stays online and performs optimally around the clock.',
+    title: 'Always Available',
+    desc: 'We are here to help you any time, day or night.',
     imgRight: false
   }
 ];
@@ -32,41 +32,62 @@ const WhyChooseUs = () => {
           <p className="section-desc" style={{ color: 'rgba(255,255,255,0.7)' }}>Experience matters. We deliver uncompromising quality across the board.</p>
         </div>
 
-        <div className="why-choose-list" style={{ display: 'flex', flexDirection: 'column', gap: 80 }}>
-          {reasons.map((r) => (
+        <div className="why-choose-list" style={{ display: 'flex', flexDirection: 'column', gap: 100 }}>
+          {reasons.map((r, i) => (
             <motion.div
               key={r.num}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, x: r.imgRight ? 100 : -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
               className="why-choose-row"
               style={{
                 display: 'flex',
-                gap: 60,
+                gap: 80,
                 alignItems: 'center',
                 flexDirection: r.imgRight ? 'row-reverse' : 'row'
               }}
             >
-              <div className="why-choose-img" style={{ flex: 1 }}>
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                className="why-choose-img" 
+                style={{ flex: 1, position: 'relative' }}
+              >
+                <div style={{
+                  position: 'absolute', inset: -10, border: '2px solid var(--accent)',
+                  borderRadius: 'var(--radius-lg)', zIndex: -1, opacity: 0.3,
+                  transform: 'translate(20px, 20px)'
+                }} />
                 <img 
                   src="/assets/why-choose-us.png" 
                   alt={r.title} 
-                  style={{ width: '100%', height: 360, objectFit: 'cover', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-default)' }} 
+                  style={{ width: '100%', height: 400, objectFit: 'cover', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(255,255,255,0.1)' }} 
                 />
-              </div>
+              </motion.div>
 
               <div className="why-choose-text" style={{ flex: 1 }}>
-                <div style={{ 
-                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center', 
-                  width: 50, height: 50, background: 'var(--accent)', color: 'white', 
-                  borderRadius: '50%', fontWeight: 800, fontSize: 18, marginBottom: 24,
-                  boxShadow: 'var(--shadow-gold)'
-                }}>
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: 0.3, type: 'spring' }}
+                  style={{ 
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', 
+                    width: 56, height: 56, background: 'var(--accent)', color: 'white', 
+                    borderRadius: '50%', fontWeight: 800, fontSize: 20, marginBottom: 28,
+                    boxShadow: '0 10px 20px rgba(201, 147, 10, 0.3)'
+                  }}
+                >
                   {r.num}
-                </div>
-                <h3 style={{ color: 'white', fontSize: 32, fontWeight: 800, marginBottom: 16 }}>{r.title}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 18, lineHeight: 1.7 }}>{r.desc}</p>
+                </motion.div>
+                <h3 style={{ color: 'white', fontSize: 40, fontWeight: 900, marginBottom: 20, letterSpacing: '-1px' }}>{r.title}</h3>
+                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 19, lineHeight: 1.8 }}>{r.desc}</p>
+                
+                <motion.div 
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  style={{ width: 80, height: 4, background: 'var(--accent)', marginTop: 32, transformOrigin: 'left' }} 
+                />
               </div>
             </motion.div>
           ))}

@@ -1,16 +1,17 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown, Code2, Sun, ShieldCheck } from 'lucide-react';
+import TechDashboard from '../ui/TechDashboard';
 
 const floatingCards = [
-  { icon: Code2, label: 'Software & Digital', color: '#3b82f6', delay: 0.6 },
-  { icon: Sun, label: 'Solar Energy', color: '#f59e0b', delay: 0.8 },
-  { icon: ShieldCheck, label: 'Finance & Security', color: '#10b981', delay: 1.0 },
+  { icon: Code2, label: 'Easy Software', color: '#3b82f6', delay: 0.6 },
+  { icon: Sun, label: 'Solar Power', color: '#f59e0b', delay: 0.8 },
+  { icon: ShieldCheck, label: 'Safe & Secure', color: '#10b981', delay: 1.0 },
 ];
 
 const Hero = () => {
   return (
     <section className="hero" style={{ overflow: 'hidden' }}>
-      <div className="hero-watermark" />
+      <TechDashboard />
 
       {/* Animated background grid lines */}
       <div style={{
@@ -47,7 +48,7 @@ const Hero = () => {
             className="hero-badge"
             style={{ marginBottom: 40 }}
           >
-            ✦ PREMIUM TECHNOLOGY SOLUTIONS
+            ✦ EASY TECH & SOLAR
           </motion.div>
 
           {/* Title */}
@@ -65,7 +66,7 @@ const Hero = () => {
               textShadow: '0 0 60px rgba(59,130,246,0.3)',
             }}
           >
-            VAARAAHI
+            SOFTWARE & SOLAR
           </motion.h1>
 
           <motion.h1
@@ -82,9 +83,10 @@ const Hero = () => {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
+              textTransform: 'uppercase'
             }}
           >
-            TECH SOLUTIONS
+            MADE SIMPLE
           </motion.h1>
 
           {/* Divider line */}
@@ -107,8 +109,7 @@ const Hero = () => {
             className="hero-desc"
             style={{ maxWidth: 580, margin: '0 auto 48px', fontSize: 18 }}
           >
-            Empowering businesses with cutting-edge software, sustainable energy
-            solutions, and comprehensive financial services.
+            We help small businesses grow with easy tech and save money with solar power.
           </motion.p>
 
           {/* CTAs */}
@@ -118,11 +119,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <a href="#services" className="btn-gold" style={{ padding: '16px 40px', fontSize: 16 }}>
-              Explore Services <ArrowRight size={18} />
+            <a href="#contact" className="btn-gold" style={{ padding: '16px 40px', fontSize: 16 }}>
+              Get a Free Quote <ArrowRight size={18} />
             </a>
-            <a href="#contact" className="btn-white-outline" style={{ padding: '16px 40px', fontSize: 16 }}>
-              Contact Us
+            <a href="tel:+919876543210" className="btn-white-outline" style={{ padding: '16px 40px', fontSize: 16 }}>
+              Call Us Now
             </a>
           </motion.div>
 
@@ -138,6 +139,7 @@ const Hero = () => {
                 key={label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -5, scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
                 transition={{ delay, duration: 0.5 }}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 10,
@@ -146,7 +148,7 @@ const Hero = () => {
                   backdropFilter: 'blur(12px)',
                   borderRadius: 999,
                   padding: '10px 20px',
-                  cursor: 'default',
+                  cursor: 'pointer',
                 }}
               >
                 <div style={{
